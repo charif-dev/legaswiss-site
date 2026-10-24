@@ -1,0 +1,438 @@
+<!doctype html>
+<!--
+  État au 24-10-2026 - Squelette site Legaswiss - V4
+  Version de travail en validation interne. Points ouverts surlignés en jaune (classe .ouvert).
+  Sources : tableau comparatif fourni par Charif Mouttaki (contenu des offres), tarifs décidés par Charif Mouttaki,
+  deck Offre pionnier V13 (quatre étapes), bp.legaswiss.com consulté le 24-10-2026 (bot, complément Sàrl ou SA, mentions légales).
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Legaswiss | Entrepreneur Studio</title>
+<meta name="description" content="Constitution de votre société en Suisse, business plan financier et accompagnement par un business officer dédié.">
+<style>
+:root{
+  --nuit:#081933; --marine:#0f2748; --or:#c1a077; --cuivre:#c87e4f; --bordeaux:#791f1f;
+  --ardoise:#47556a; --gris:#8a94a6; --pale:#c9d1e0; --soft:#aeb8c7; --trait-sombre:#2a3b5c;
+  --fond:#f7f8fa; --carte:#ffffff; --filet:#d7dce5; --texte:#081933; --texte-doux:#47556a;
+  --titre-a:#791f1f; --titre-b:#081933; --contour:#081933;
+  --serif:Cambria, "Cambria Math", Georgia, "Times New Roman", serif;
+  --sans:Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top, 0px);
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --fond:#081933; --carte:#0f2748; --filet:#1f3866; --texte:#f7f8fa; --texte-doux:#c9d1e0;
+    --titre-a:#f7f8fa; --titre-b:#c1a077; --contour:#c1a077;
+  }
+}
+:root[data-theme="dark"]{
+  --fond:#081933; --carte:#0f2748; --filet:#1f3866; --texte:#f7f8fa; --texte-doux:#c9d1e0;
+  --titre-a:#f7f8fa; --titre-b:#c1a077; --contour:#c1a077;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top, 0px) + 84px)}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{margin:0; background:var(--fond); color:var(--texte); font-family:var(--sans); font-size:17px; line-height:1.55; -webkit-text-size-adjust:100%}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); z-index:30; background:var(--nuit)}
+a{color:inherit}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--or); outline-offset:3px}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--serif); font-weight:700; text-transform:uppercase; letter-spacing:.01em; line-height:1.12; margin:0}
+.wrap{max-width:1140px; margin:0 auto; padding:0 24px}
+.ouvert{background:#ffe600; color:#081933; padding:1px 5px; border-radius:2px; font-weight:600; font-style:normal}
+
+/* Boutons */
+.btn{display:inline-block; padding:13px 22px; border-radius:4px; font-family:var(--sans); font-weight:700; font-size:16px; line-height:1.2; text-decoration:none; border:1.5px solid transparent; text-align:center}
+.btn-plein{background:var(--bordeaux); color:#fff}
+.btn-plein:hover{background:#8e2626}
+.btn-or{border-color:var(--or); color:var(--or)}
+.btn-or:hover{background:rgba(193,160,119,.12)}
+.btn-trait{border-color:var(--contour); color:var(--contour)}
+.btn-trait:hover{background:rgba(193,160,119,.12)}
+
+/* Ruban et en-tête */
+.ruban{background:var(--ardoise); color:#fff; font-size:13px; text-align:center; padding:6px 16px}
+.entete{position:sticky; top:env(safe-area-inset-top, 0px); z-index:20; background:var(--nuit); color:#fff; border-bottom:1px solid var(--trait-sombre)}
+.entete .wrap{display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:68px}
+.logo{text-decoration:none; font-family:var(--serif); font-weight:700; font-size:23px; color:var(--cuivre); letter-spacing:.03em; line-height:1.05}
+.logo small{display:block; font-style:italic; font-weight:400; font-size:12px; color:#fff; letter-spacing:0}
+.nav{display:flex; align-items:center; gap:22px}
+.nav a{text-decoration:none; font-size:15px; color:var(--pale)}
+.nav a:hover{color:var(--or)}
+.nav .btn{padding:10px 16px; font-size:15px; color:#fff}
+
+/* Haut de page */
+.accueil{background:var(--nuit); color:#fff; padding:88px 0 72px}
+.accueil h1{font-size:clamp(32px, 5.2vw, 58px); max-width:19ch; color:#fff}
+.accueil h1 span{color:var(--or)}
+.accueil .resume{font-size:19px; color:var(--pale); max-width:58ch; margin:24px 0 34px}
+.actions{display:flex; flex-wrap:wrap; gap:14px}
+.reperes{list-style:none; margin:56px 0 0; padding:24px 0 0; border-top:1px solid var(--trait-sombre); display:grid; grid-template-columns:repeat(3, 1fr); gap:24px}
+.reperes strong{display:block; font-family:var(--serif); font-size:21px; color:#fff}
+.reperes span{font-size:15px; color:var(--soft)}
+
+/* Sections */
+.bloc{padding:80px 0}
+.bloc h2{font-size:clamp(25px, 3.6vw, 36px); margin-bottom:14px}
+.bloc h2 .a{color:var(--titre-a)}
+.bloc h2 .b{color:var(--titre-b)}
+.intro{max-width:64ch; color:var(--texte-doux); margin:0 0 12px}
+
+/* Parcours : frise des quatre étapes */
+.parcours{background:var(--nuit); color:#fff}
+.parcours h2 .a{color:#fff}
+.parcours h2 .b{color:var(--or)}
+.parcours .intro{color:var(--pale)}
+.frise{list-style:none; margin:52px 0 0; padding:0; display:grid; grid-template-columns:repeat(4, 1fr); gap:28px; position:relative}
+.frise::before{content:""; position:absolute; top:21px; left:22px; right:22px; height:1px; background:var(--trait-sombre)}
+.frise li{position:relative}
+.point{width:44px; height:44px; border-radius:50%; border:1.5px solid var(--or); background:var(--nuit); color:var(--or); display:grid; place-items:center; font-family:var(--serif); font-weight:700; font-size:18px; position:relative; z-index:1}
+.frise li.actif .point{background:var(--or); color:var(--nuit)}
+.rang{display:block; margin-top:18px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--or); font-weight:700}
+.frise h3{font-size:19px; color:#fff; margin:6px 0 10px}
+.frise p{margin:0 0 12px; font-size:16px; color:var(--pale)}
+.frise .meta{margin:0 0 4px; font-size:14px; color:var(--soft)}
+.frise .meta b{color:var(--or); font-weight:700}
+.note-frise{margin:36px 0 0; font-size:15px; color:var(--soft); max-width:64ch}
+
+/* Offres */
+.offres{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; margin-top:44px; align-items:stretch}
+.offre{position:relative; background:var(--carte); border:1px solid var(--filet); border-radius:6px; padding:30px 24px 26px; display:flex; flex-direction:column; gap:14px}
+.offre.reco{border:2px solid var(--or)}
+.badge{position:absolute; top:-13px; left:22px; background:var(--or); color:var(--nuit); font-size:13px; font-weight:700; padding:3px 10px; border-radius:3px}
+.offre h3{font-size:19px; color:var(--titre-b)}
+.accroche{margin:0; font-size:15px; color:var(--texte-doux)}
+.prix{font-family:var(--serif); font-weight:700; font-size:32px; line-height:1.1; color:var(--texte)}
+.prix small{font-family:var(--sans); font-weight:400; font-size:15px; color:var(--texte-doux)}
+.duree{display:grid; gap:6px}
+.piste{position:relative; height:6px; border-radius:3px; background:var(--filet); overflow:hidden}
+.remplie{position:absolute; inset:0 auto 0 0; background:var(--or); border-radius:3px}
+.duree .legende{font-size:14px; color:var(--texte-doux)}
+.criteres{margin:0; border-top:1px solid var(--filet)}
+.criteres div{display:grid; grid-template-columns:44% 1fr; gap:12px; padding:9px 0; border-bottom:1px solid var(--filet); font-size:15px}
+.criteres dt{color:var(--texte-doux)}
+.criteres dd{margin:0; font-weight:700; color:var(--texte)}
+.criteres dd.non{font-weight:400; color:var(--gris)}
+.offre .btn{margin-top:auto; align-self:flex-start}
+.complement{margin-top:30px; padding:18px 22px; background:var(--carte); border:1px solid var(--filet); border-left:3px solid var(--bordeaux); border-radius:4px; max-width:860px}
+.complement p{margin:0; font-size:16px}
+.encadre{margin-top:18px; background:var(--marine); color:#fff; border-radius:6px; padding:20px 24px; display:flex; gap:16px; align-items:flex-start; max-width:860px}
+.encadre .fleche{color:var(--or); font-weight:700; font-size:20px; line-height:1.3}
+.encadre p{margin:0; font-size:16px; color:var(--pale)}
+.encadre strong{color:var(--or)}
+.conflit{margin:22px 0 0; font-size:14px; font-style:italic; color:var(--texte-doux); max-width:80ch}
+
+/* Bot business plan */
+.bot{background:var(--carte); border-top:1px solid var(--filet); border-bottom:1px solid var(--filet)}
+.bot-grille{display:grid; grid-template-columns:1.1fr 1fr; gap:56px; margin-top:40px}
+.contenu{margin:0}
+.contenu div{padding:14px 0; border-bottom:1px solid var(--filet)}
+.contenu div:first-child{border-top:1px solid var(--filet)}
+.contenu dt{font-family:var(--serif); font-weight:700; font-size:18px; color:var(--titre-b); text-transform:uppercase; margin-bottom:4px}
+.contenu dd{margin:0; color:var(--texte-doux); font-size:16px}
+.sequence{list-style:none; margin:0; padding:0; display:grid; gap:22px; counter-reset:etape}
+.sequence li{display:grid; grid-template-columns:44px 1fr; gap:16px; align-items:start; counter-increment:etape}
+.sequence li::before{content:counter(etape); width:44px; height:44px; border-radius:50%; border:1.5px solid var(--or); display:grid; place-items:center; font-family:var(--serif); font-weight:700; color:var(--titre-b)}
+.sequence h3{font-size:17px; color:var(--texte); margin:8px 0 4px}
+.sequence p{margin:0; font-size:16px; color:var(--texte-doux)}
+.plancher{margin:28px 0 22px; font-size:16px}
+.plancher b{font-family:var(--serif); font-size:20px}
+
+/* Contact */
+.contact{background:var(--nuit); color:#fff}
+.contact h2 .a{color:#fff}
+.contact h2 .b{color:var(--or)}
+.contact .intro{color:var(--pale)}
+.contact-grille{display:grid; grid-template-columns:auto 1fr; gap:36px; align-items:center; margin-top:36px; max-width:760px}
+.medaillon{width:172px; height:172px; border-radius:50%; border:3px solid var(--or); background:var(--marine); display:grid; place-items:center; text-align:center; padding:20px; font-size:13px; line-height:1.4}
+.fiche{display:grid; gap:6px}
+.fiche .nom{font-family:var(--serif); font-weight:700; font-size:23px}
+.fiche .role{color:var(--or); font-size:16px; margin-bottom:6px}
+.fiche a{text-decoration:none; font-size:16px; color:#fff}
+.fiche a:hover{color:var(--or)}
+.fiche .btn{justify-self:start; margin-top:14px}
+.fiche .lien-note{font-size:14px; margin-top:6px}
+
+/* Pied de page : bandeau des quatre étapes */
+.pied{background:var(--marine); color:var(--pale); padding:30px 0; border-top:1px solid #1f3866}
+.pied .ligne{display:flex; align-items:center; flex-wrap:wrap; gap:16px 20px}
+.croix{width:32px; height:32px; flex:none; background:var(--bordeaux); color:#fff; display:grid; place-items:center; font-weight:700; font-size:20px}
+.marque{font-family:var(--serif); font-weight:700; font-size:14px; letter-spacing:.14em; color:var(--cuivre)}
+.bandeau{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px}
+.bandeau li{display:flex; align-items:center; gap:8px}
+.bandeau li::before{content:""; width:9px; height:9px; border-radius:50%; border:1px solid var(--or)}
+.bandeau a{text-decoration:none; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--pale)}
+.bandeau a:hover{color:var(--or)}
+.mentions{margin-top:22px; display:flex; flex-wrap:wrap; gap:10px 20px; font-size:13px; color:var(--soft)}
+.mentions a{color:var(--soft)}
+
+/* Barre d'action sur téléphone */
+.barre-mobile{display:none}
+
+@media (max-width: 960px){
+  .frise{grid-template-columns:1fr; gap:30px}
+  .frise::before{top:0; bottom:0; left:21px; right:auto; width:1px; height:auto}
+  .frise li{padding-left:68px; min-height:60px}
+  .point{position:absolute; left:0; top:0}
+  .rang{margin-top:0}
+  .offres{grid-template-columns:1fr; max-width:560px}
+  .bot-grille{grid-template-columns:1fr; gap:40px}
+}
+@media (max-width: 760px){
+  .nav a.lien{display:none}
+  .reperes{grid-template-columns:1fr; gap:16px}
+  .accueil{padding:60px 0 56px}
+  .bloc{padding:60px 0}
+  .contact-grille{grid-template-columns:1fr; justify-items:start}
+  .barre-mobile{display:flex; gap:10px; position:fixed; left:0; right:0; bottom:0; z-index:25; background:var(--nuit); border-top:1px solid var(--trait-sombre); padding:10px 12px calc(10px + env(safe-area-inset-bottom, 0px))}
+  .barre-mobile .btn{flex:1; padding:12px 10px; font-size:15px}
+  body{padding-bottom:72px}
+}
+</style>
+</head>
+<body>
+
+<div class="ruban">Version de travail en validation interne : ne pas diffuser.</div>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="logo" href="#accueil">LEGASWISS<small>Entrepreneur Studio</small></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="lien" href="#parcours">Parcours</a>
+      <a class="lien" href="#offres">Offres</a>
+      <a class="lien" href="#business-plan">Business plan</a>
+      <a class="lien" href="#contact">Contact</a>
+      <a class="btn btn-plein" href="#contact">Prendre rendez-vous</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="accueil" id="accueil">
+  <div class="wrap">
+    <h1>Votre société en Suisse, <span>constituée et accompagnée</span></h1>
+    <p class="resume">Constitution de votre Sàrl ou SA, business plan financier, business officer dédié : choisissez un appui ponctuel ou un accompagnement d’un à trois mois.</p>
+    <div class="actions">
+      <a class="btn btn-plein" href="#contact">Prendre rendez-vous</a>
+      <a class="btn btn-or" href="https://bp.legaswiss.com/register">Créer mon business plan</a>
+    </div>
+    <ul class="reperes">
+      <li><strong>Dès CHF 490 HT</strong><span>avec le Pack Conformité</span></li>
+      <li><strong>1 business officer dédié</strong><span>dès l’Impulsion Opérationnelle</span></li>
+      <li><strong>4 étapes</strong><span>de la création à la sécurisation du patrimoine</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="bloc parcours" id="parcours">
+  <div class="wrap">
+    <h2><span class="a">Un partenaire, </span><span class="b">tout le cycle de vie</span></h2>
+    <p class="intro">Sécuriser, simplifier et accélérer l’aventure entrepreneuriale en Suisse, de la création à la reprise.</p>
+
+    <ol class="frise" aria-label="Frise des quatre étapes d’accompagnement">
+      <li class="actif" id="lancement">
+        <span class="point" aria-hidden="true">1</span>
+        <span class="rang">Étape 1</span>
+        <h3>Lancement</h3>
+        <p>Constitution de votre structure suisse, feuille de route et premiers clients. Le business officer coordonne chaque acteur.</p>
+        <p class="meta"><b>Départ :</b> à la signature de votre offre</p>
+        <p class="meta"><b>Durée :</b> <mark class="ouvert">[à valider]</mark></p>
+      </li>
+      <li id="acceleration">
+        <span class="point" aria-hidden="true">2</span>
+        <span class="rang">Étape 2</span>
+        <h3>Accélération</h3>
+        <p>Développement commercial, introductions dans le réseau Legaswiss et outils du studio.</p>
+        <p class="meta"><b>Départ :</b> au rythme de votre entreprise</p>
+        <p class="meta"><b>Durée :</b> <mark class="ouvert">[à valider]</mark></p>
+      </li>
+      <li id="valorisation">
+        <span class="point" aria-hidden="true">3</span>
+        <span class="rang">Étape 3</span>
+        <h3>Valorisation</h3>
+        <p>Pilotage de la valeur, préparation d’une levée, d’une reprise ou d’une cession.</p>
+        <p class="meta"><b>Départ :</b> au rythme de votre entreprise</p>
+        <p class="meta"><b>Durée :</b> <mark class="ouvert">[à valider]</mark></p>
+      </li>
+      <li id="securisation">
+        <span class="point" aria-hidden="true">4</span>
+        <span class="rang">Étape 4</span>
+        <h3>Sécurisation du patrimoine</h3>
+        <p>Patrimoine privé séparé via Sàrl ou SA, 2e pilier par le salaire, assurances RC, homme-clé et perte de gain.</p>
+        <p class="meta"><b>Départ :</b> au rythme de votre entreprise</p>
+        <p class="meta"><b>Durée :</b> <mark class="ouvert">[à valider]</mark></p>
+      </li>
+    </ol>
+    <p class="note-frise">Chaque échéance se calcule à partir de la signature de votre offre.</p>
+  </div>
+</section>
+
+<section class="bloc" id="offres">
+  <div class="wrap">
+    <h2><span class="a">Choisissez votre niveau </span><span class="b">d’accompagnement</span></h2>
+    <p class="intro">Huit critères dans le même ordre pour comparer les trois offres. Honoraires hors taxes.</p>
+    <p class="intro"><mark class="ouvert">[Nom des offres à choisir : trois appellations coexistent sur les sites Legaswiss]</mark></p>
+
+    <div class="offres">
+      <article class="offre">
+        <h3>Pack Conformité</h3>
+        <p class="accroche">L’essentiel pour lancer, en toute conformité.</p>
+        <div class="prix">CHF 490 <small>HT</small></div>
+        <div class="duree">
+          <div class="piste"><span class="remplie" style="width:4%"></span></div>
+          <span class="legende">Accompagnement ponctuel, au lancement</span>
+        </div>
+        <dl class="criteres">
+          <div><dt>Support administratif</dt><dd>Support méthodologique</dd></div>
+          <div><dt>Accompagnement</dt><dd>Ponctuel (lancement)</dd></div>
+          <div><dt>Expertise, conseils</dt><dd class="non">Non inclus</dd></div>
+          <div><dt>Audit, stratégie</dt><dd class="non">Non inclus</dd></div>
+          <div><dt>Finance, stratégie</dt><dd class="non">Non inclus</dd></div>
+          <div><dt>Réseau</dt><dd>Communauté n3xt</dd></div>
+          <div><dt>Réseau, écosystème</dt><dd class="non">Non inclus</dd></div>
+          <div><dt>Support direct</dt><dd>Oui, réactif</dd></div>
+        </dl>
+        <a class="btn btn-trait" href="#contact">Prendre rendez-vous</a>
+      </article>
+
+      <article class="offre reco">
+        <span class="badge">Recommandé</span>
+        <h3>Impulsion Opérationnelle</h3>
+        <p class="accroche">Un lancement sécurisé et conforme.</p>
+        <div class="prix">CHF 2.800 <small>HT</small></div>
+        <div class="duree">
+          <div class="piste"><span class="remplie" style="width:33.3%"></span></div>
+          <span class="legende">1 mois d’accompagnement</span>
+        </div>
+        <dl class="criteres">
+          <div><dt>Support administratif</dt><dd>Constitution intégrale</dd></div>
+          <div><dt>Accompagnement</dt><dd>1 mois</dd></div>
+          <div><dt>Expertise, conseils</dt><dd>1 business officer dédié</dd></div>
+          <div><dt>Audit, stratégie</dt><dd>Audit de viabilité</dd></div>
+          <div><dt>Finance, stratégie</dt><dd>Business plan financier</dd></div>
+          <div><dt>Réseau</dt><dd>Communauté n3xt</dd></div>
+          <div><dt>Réseau, écosystème</dt><dd>Accès privilégié à notre écosystème de ressources</dd></div>
+          <div><dt>Support direct</dt><dd>Oui, prioritaire</dd></div>
+        </dl>
+        <a class="btn btn-plein" href="#contact">Prendre rendez-vous</a>
+      </article>
+
+      <article class="offre">
+        <h3>Ascension Stratégique</h3>
+        <p class="accroche">Un board stratégique pour accélérer.</p>
+        <div class="prix">Nous consulter</div>
+        <div class="duree">
+          <div class="piste"><span class="remplie" style="width:100%"></span></div>
+          <span class="legende">3 mois d’accompagnement</span>
+        </div>
+        <dl class="criteres">
+          <div><dt>Support administratif</dt><dd>Constitution intégrale</dd></div>
+          <div><dt>Accompagnement</dt><dd>3 mois</dd></div>
+          <div><dt>Expertise, conseils</dt><dd>1 business officer dédié et expert(s) sur demande</dd></div>
+          <div><dt>Audit, stratégie</dt><dd>« Crash Test » 360°</dd></div>
+          <div><dt>Finance, stratégie</dt><dd>Business plan financier, stratégie financière, ingénierie patrimoniale</dd></div>
+          <div><dt>Réseau</dt><dd>Communauté n3xt</dd></div>
+          <div><dt>Réseau, écosystème</dt><dd>Accès privilégié à notre écosystème de ressources</dd></div>
+          <div><dt>Support direct</dt><dd>Oui, VIP</dd></div>
+        </dl>
+        <a class="btn btn-trait" href="#contact">Nous consulter</a>
+      </article>
+    </div>
+
+    <div class="complement">
+      <p><strong>Complément obligatoire pour constituer une Sàrl ou une SA : CHF 2.500.</strong> Il couvre les frais de notaire, la légalisation de signature, la relation bancaire et l’inscription au Registre du commerce, coordination incluse.</p>
+    </div>
+
+    <div class="encadre">
+      <span class="fleche" aria-hidden="true">→</span>
+      <p><strong>Conditions de lancement.</strong> <mark class="ouvert">[Nombre de dossiers éligibles et date butoir, à écrire]</mark></p>
+    </div>
+
+    <p class="conflit">Legaswiss déclare toute relation avec une cible, un cédant ou un partenaire présenté avant engagement, et se retire du dossier concerné en cas de conflit avéré.</p>
+  </div>
+</section>
+
+<section class="bloc bot" id="business-plan">
+  <div class="wrap">
+    <h2><span class="a">Votre business plan, </span><span class="b">avant le premier rendez-vous</span></h2>
+    <p class="intro">Un échange guidé construit le récit et les chiffres de votre projet. Apportez le dossier à votre premier rendez-vous.</p>
+
+    <div class="bot-grille">
+      <dl class="contenu">
+        <div><dt>Le récit</dt><dd>Résumé exécutif, présentation des associés, analyse de marché et stratégie.</dd></div>
+        <div><dt>Les chiffres</dt><dd>Compte de résultat sur trois ans, plan de trésorerie et bilan prévisionnel, en CHF.</dd></div>
+        <div><dt>Trois formats</dt><dd>Un PDF à présenter, un Word à retravailler, un Excel à formules pour ajuster vos hypothèses.</dd></div>
+      </dl>
+
+      <div>
+        <ol class="sequence">
+          <li><div><h3>Décrivez votre projet</h3><p>Vous répondez à des questions simples, comme dans une conversation.</p></div></li>
+          <li><div><h3>Le dossier se construit</h3><p>Le récit et les chiffres se rédigent au fil de l’échange.</p></div></li>
+          <li><div><h3>Téléchargez et présentez</h3><p>Récupérez votre dossier, affinez-le, puis présentez-le.</p></div></li>
+        </ol>
+        <p class="plancher">Tarif plancher via le bot : <b>CHF 790 HT</b>. <mark class="ouvert">[Pack Conformité affiché à CHF 490 HT sur le bot : arbitrage à faire]</mark></p>
+        <a class="btn btn-plein" href="https://bp.legaswiss.com/register">Créer mon business plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloc contact" id="contact">
+  <div class="wrap">
+    <h2><span class="a">On en discute </span><span class="b">de vive voix</span></h2>
+    <p class="intro">Trente minutes pour préciser votre projet et choisir votre niveau d’accompagnement. Premier échange gratuit et sans engagement.</p>
+
+    <div class="contact-grille">
+      <div class="medaillon" role="img" aria-label="Emplacement de la photo de Loïc Morand">
+        <mark class="ouvert">[accord de Loïc Morand sur l’usage de sa photo : à obtenir]</mark>
+      </div>
+      <div class="fiche">
+        <span class="nom">Loïc Morand</span>
+        <span class="role">Fondateur · Legaswiss · référent Suisse</span>
+        <a href="mailto:loic@legaswiss.com">loic@legaswiss.com</a>
+        <a href="tel:+41798358528">+41 79 835 85 28</a>
+        <a href="https://wa.me/41798358528">WhatsApp</a>
+        <a class="btn btn-plein" href="https://calendar.app.google/cYVsGGXL4YMRhMVr5">Prenez RDV avec moi</a>
+        <span class="lien-note"><mark class="ouvert">[lien de réservation à confirmer : agenda Google ou bp.legaswiss.com/contact]</mark></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div class="ligne">
+      <span class="croix" aria-hidden="true">+</span>
+      <span class="marque">LEGASWISS</span>
+      <ul class="bandeau" aria-label="Étapes d’accompagnement">
+        <li><a href="#lancement">Lancement</a></li>
+        <li><a href="#acceleration">Accélération</a></li>
+        <li><a href="#valorisation">Valorisation</a></li>
+        <li><a href="#securisation">Sécurisation du patrimoine</a></li>
+      </ul>
+    </div>
+    <div class="mentions">
+      <span>© 2026 Legaswiss</span>
+      <a href="https://bp.legaswiss.com/mentions-legales">Mentions légales</a>
+      <a href="https://bp.legaswiss.com/confidentialite">Confidentialité</a>
+      <mark class="ouvert">[mentions à adapter : hébergeur de cette page]</mark>
+    </div>
+  </div>
+</footer>
+
+<nav class="barre-mobile" aria-label="Actions rapides">
+  <a class="btn btn-plein" href="#contact">Prendre rendez-vous</a>
+  <a class="btn btn-or" href="https://bp.legaswiss.com/register">Business plan</a>
+</nav>
+
+</body>
+</html>
