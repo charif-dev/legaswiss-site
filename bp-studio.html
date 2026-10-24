@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legaswiss BP Studio · Landing V2</title>
+<meta name="description" content="Proposition de landing page pour BP Studio, le business plan en conversation de Legaswiss Entrepreneur Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caladea:wght@400;700&family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#081933;--marine:#0F2748;--or:#C1A077;--cuivre:#C87E4F;--bordeaux:#791F1F;
+  --ardoise:#47556A;--gris:#8A94A6;--gris2:#7F8BA3;--fond:#F7F8FA;--blanc:#FFFFFF;
+  --filet:#D7DCE5;--clair:#C9D1E0;--clair2:#AEB8C7;--dline:#1F3866;
+  --serif:Cambria,Caladea,Georgia,"Times New Roman",serif;
+  --sans:Calibri,Carlito,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fond);color:var(--ardoise);font-family:var(--sans);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body.kx-on{overflow:hidden}
+svg{display:block}
+a{color:inherit}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+section{padding:88px 0;scroll-margin-top:68px}
+@media (max-width:760px){section{padding:56px 0}}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+/* Typographie de la charte */
+.kicker{font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or);margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.kicker svg{width:20px;height:20px}
+.title{font-family:var(--serif);font-weight:700;text-transform:uppercase;line-height:1.08;letter-spacing:.01em;margin:0;overflow-wrap:break-word}
+h1.title{font-size:clamp(34px,5.2vw,58px)}
+h2.title{font-size:clamp(26px,3.4vw,38px)}
+.title .a{color:var(--bordeaux)}
+.title .b{color:var(--nuit)}
+.dark{background:var(--nuit);color:var(--clair)}
+.dark .title .a{color:#fff}
+.dark .title .b{color:var(--or)}
+.lead{font-size:19px;color:var(--ardoise);max-width:660px;margin-top:16px}
+.dark .lead{color:var(--clair)}
+.sec-head{margin-bottom:40px}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:17px;text-decoration:none;border-radius:6px;padding:14px 22px;border:1px solid transparent;cursor:pointer;line-height:1.2}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+.btn-or{background:var(--or);color:var(--nuit);border-color:var(--or)}
+.btn-or:hover{background:#cdb08b;border-color:#cdb08b}
+.btn-sm{font-size:15px;padding:9px 16px}
+.lnk{color:#fff;font-weight:700;text-underline-offset:5px;text-decoration-color:var(--or)}
+
+/* Bandeau de maquette */
+.ribbon{background:var(--or);color:var(--nuit);font-size:13px;font-weight:700;letter-spacing:.04em;text-align:center;padding:7px 16px}
+
+/* En-tete */
+.head{position:sticky;top:0;z-index:50;background:var(--nuit);border-bottom:1px solid var(--dline)}
+.head .wrap{display:flex;align-items:center;gap:26px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.14em;color:var(--cuivre)}
+.brand .tag{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--or);border:1px solid var(--or);border-radius:4px;padding:3px 7px;white-space:nowrap}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a,.head .login{color:var(--clair);text-decoration:none;font-size:15px}
+.nav a:hover,.head .login:hover{color:#fff}
+@media (max-width:1020px){.nav{display:none}.head .login{margin-left:auto}}
+@media (max-width:520px){.head .login{display:none}.head .btn{margin-left:auto}.brand .mark{font-size:19px}}
+
+/* Hero */
+.hero{padding:72px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.hero .lead{font-size:20px}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:32px}
+.checks{display:flex;flex-wrap:wrap;gap:10px 22px;margin:28px 0 0;padding:0;list-style:none;font-size:15px;color:var(--clair2)}
+.checks li{display:flex;align-items:center;gap:8px}
+.checks svg{width:16px;height:16px;color:var(--or)}
+.hero-visual{position:relative;height:440px}
+.sheet{position:absolute;background:#fff;border:1px solid var(--filet);border-radius:6px;width:300px;height:388px;padding:28px 24px}
+.sheet .ftab{position:absolute;top:-12px;left:20px;background:var(--marine);color:var(--or);border:1px solid var(--or);font-size:11px;font-weight:700;letter-spacing:.16em;padding:3px 9px;border-radius:4px}
+.s3{right:0;top:0;transform:rotate(5deg);background:#EDF0F5}
+.s2{right:42px;top:14px;transform:rotate(-3deg);background:#F3F5F9}
+.s1{right:86px;top:34px}
+.sk-k{font-size:11px;letter-spacing:.2em;font-weight:700;color:var(--bordeaux);margin:4px 0 12px}
+.sk-line{height:10px;border-radius:3px;background:#E3E7EE;margin:0 0 8px}
+.w70{width:72%}.w45{width:46%}
+.sk-list{list-style:none;margin:16px 0;padding:0;display:grid;gap:7px}
+.sk-list li{font-size:13px;color:var(--nuit);font-weight:700;display:flex;align-items:center;gap:8px}
+.sk-list li:before{content:"";width:6px;height:6px;background:var(--or);border-radius:50%}
+.sk-table{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:7px;margin-top:14px;padding-top:14px;border-top:1px solid var(--filet)}
+.sk-table span{height:8px;border-radius:2px;background:#E3E7EE}
+.sk-table span.h{background:var(--clair)}
+.sk-cap{font-size:11px;color:var(--gris);margin-top:14px;letter-spacing:.04em}
+.bubble{position:absolute;left:0;bottom:18px;background:var(--marine);color:#fff;border:1px solid var(--dline);border-radius:14px 14px 14px 4px;padding:14px 18px;font-size:15px;display:flex;align-items:center;gap:6px;z-index:2}
+.bubble span{margin-right:6px}
+.bubble i{width:6px;height:6px;border-radius:50%;background:var(--or);display:inline-block;animation:blink 1.4s infinite}
+.bubble i:nth-of-type(2){animation-delay:.2s}
+.bubble i:nth-of-type(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-visual{width:100%;max-width:430px}}
+@media (max-width:520px){
+  .hero-visual{height:auto;padding-bottom:64px}
+  .sheet{position:relative;width:100%;height:auto;right:auto;top:auto;transform:none}
+  .s2,.s3{display:none}
+}
+
+/* Carrousel kiosque */
+.kiosk-sec{background:var(--fond)}
+.kiosk{display:grid;grid-template-columns:330px minmax(0,1fr);grid-template-rows:auto 1fr;background:var(--nuit);border-radius:10px;overflow:hidden;color:var(--clair)}
+.kiosk>*{min-width:0}
+.k-bar{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--dline)}
+.k-brand{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--or)}
+.k-ctrl{display:flex;gap:8px}
+.k-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--clair);border:1px solid var(--dline);border-radius:6px;padding:7px 12px;font:700 13px var(--sans);letter-spacing:.06em;cursor:pointer}
+.k-btn:hover{color:#fff;border-color:var(--or)}
+.k-btn svg{width:16px;height:16px}
+.k-tabs{display:flex;flex-direction:column;border-right:1px solid var(--dline)}
+.k-tab{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:14px;padding:19px 20px;border-bottom:1px solid var(--dline);color:var(--clair2);cursor:pointer;position:relative;font-size:16px;line-height:1.3}
+.k-tab:last-child{border-bottom:0}
+.k-tab .num{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--gris2);min-width:30px}
+.k-tab .short{display:none}
+.k-tab:hover{color:#fff}
+.k-tab[aria-selected="true"]{background:var(--marine);color:#fff}
+.k-tab[aria-selected="true"] .num{color:var(--cuivre)}
+.k-tab:focus-visible{outline:2px solid var(--or);outline-offset:-2px}
+.k-tab .prog{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--or)}
+.k-tab .prog.run{animation:prog var(--dur,7s) linear forwards}
+.kiosk.paused .k-tab .prog.run{animation-play-state:paused}
+@keyframes prog{from{width:0}to{width:100%}}
+.k-panel{position:relative;padding:44px 48px 46px;min-height:430px;touch-action:pan-y}
+.k-slide{position:relative;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.k-big{position:absolute;right:0;top:-14px;font-family:var(--serif);font-weight:700;font-size:140px;line-height:1;color:var(--dline);pointer-events:none;z-index:0}
+.k-slide>*:not(.k-big){position:relative;z-index:1}
+.kiosk .title .a,.kx .title .a{color:#fff}
+.kiosk .title .b,.kx .title .b{color:var(--or)}
+.k-title{font-size:clamp(26px,3vw,40px);max-width:560px}
+@media (max-width:1100px){.k-big{display:none}}
+.k-text{font-size:19px;color:var(--clair);max-width:600px;margin-top:20px}
+.k-next{display:block;max-width:600px;margin:26px 0 30px;padding-left:16px;border-left:2px solid var(--or);color:#fff;text-decoration:none;font-size:16px}
+.k-next strong{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);margin-bottom:4px}
+.k-next:hover span{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:860px){
+  .kiosk{grid-template-columns:minmax(0,1fr)}
+  .k-tabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--dline);scrollbar-width:none}
+  .k-tabs::-webkit-scrollbar{display:none}
+  .k-tab{flex:0 0 auto;border-bottom:0;border-right:1px solid var(--dline);padding:14px 16px;gap:10px}
+  .k-tab .lbl{display:none}
+  .k-tab .short{display:inline;font-size:15px}
+  .k-tab .num{font-size:18px;min-width:0}
+  .k-panel{padding:28px 20px 32px;min-height:0}
+  .k-big{display:none}
+  .k-btn span{display:none}
+}
+
+/* Dossier */
+#dossier{background:#fff}
+.doss{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:#fff;border:1px solid var(--filet);border-radius:4px;padding:30px}
+#dossier .card{background:var(--fond)}
+#dossier .card.navy,.card.navy{background:var(--marine);border-color:var(--marine);color:var(--clair)}
+.card .kicker{color:var(--bordeaux)}
+.card.navy .kicker{color:var(--or)}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;font-family:var(--serif);font-weight:700;font-size:20px;color:var(--nuit);line-height:1.3}
+.card.navy .ticks li{color:#fff}
+.ticks svg{width:20px;height:20px;color:var(--or);flex:0 0 auto;margin-top:2px}
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.fmt{border:1px solid var(--filet);background:#fff;border-radius:4px;padding:18px 20px;display:flex;align-items:baseline;gap:14px}
+.fmt b{font-family:var(--serif);font-size:22px;color:var(--cuivre);letter-spacing:.08em}
+.encadre{display:flex;align-items:center;gap:16px;background:var(--marine);color:#fff;border-radius:6px;padding:18px 24px;margin-top:20px;font-size:17px}
+.encadre svg{width:22px;height:22px;flex:0 0 auto}
+.encadre strong{color:var(--or);margin-right:8px}
+@media (max-width:760px){.doss,.formats{grid-template-columns:1fr}}
+
+/* Frise */
+.frise{position:relative;display:grid;grid-template-columns:repeat(5,1fr);margin:8px 0 0;padding:0;list-style:none}
+.frise:before{content:"";position:absolute;left:10%;right:10%;top:26px;height:1px;background:var(--or)}
+.step{text-align:center;padding:0 10px;position:relative}
+.dot{width:52px;height:52px;border-radius:50%;border:1px solid var(--or);background:var(--marine);color:var(--or);display:grid;place-items:center;margin:0 auto 16px;font-weight:700;font-size:18px;position:relative;z-index:1}
+.step.last .dot{background:var(--or);color:var(--nuit)}
+.step h3{font-family:var(--serif);font-size:18px;line-height:1.25;color:#fff;margin:0 0 8px}
+.step p{font-size:15px;color:var(--clair)}
+.phases{display:grid;grid-template-columns:4fr 1fr;gap:10px;margin-top:40px}
+.ph{border-radius:2px;padding:12px 18px;font-size:15px;line-height:1.35}
+.ph b{display:block;letter-spacing:.14em;font-size:13px}
+.ph-1{background:var(--or);color:var(--nuit)}
+.ph-2{border:1px dashed var(--or);color:var(--or)}
+@media (max-width:860px){
+  .frise{grid-template-columns:1fr;gap:24px}
+  .frise:before{left:26px;right:auto;top:26px;bottom:26px;width:1px;height:auto}
+  .step{display:grid;grid-template-columns:52px 1fr;column-gap:16px;text-align:left;padding:0}
+  .dot{margin:0;grid-row:span 2}
+  .step h3{margin-top:4px}
+  .phases{grid-template-columns:1fr}
+}
+
+/* Temoignages */
+#temoignages{background:var(--fond)}
+.tgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.tcard{position:relative;border:1.5px dashed var(--or);background:#fff;border-radius:6px;padding:26px 28px;display:flex;flex-direction:column;gap:14px}
+.tcard.big{grid-row:span 2;padding:36px}
+.tcard.big:before{content:"«";position:absolute;right:34px;bottom:118px;font-family:var(--serif);font-weight:700;font-size:130px;line-height:1;color:rgba(193,160,119,.28);pointer-events:none}
+.t-label{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--bordeaux);border:1px solid var(--bordeaux);border-radius:4px;padding:3px 8px}
+.t-sit{font-size:14px;color:var(--gris2)}
+.t-quote{font-family:var(--serif);font-size:22px;line-height:1.35;color:var(--nuit);margin:0}
+.tcard.big .t-quote{font-size:28px}
+.ph-txt{color:var(--gris);font-style:italic}
+.t-who{display:flex;align-items:center;gap:14px;margin-top:auto}
+.t-avatar{width:54px;height:54px;border-radius:50%;border:1.5px dashed var(--gris);display:grid;place-items:center;font-size:12px;color:var(--gris);flex:0 0 auto}
+.t-meta{font-size:15px;line-height:1.4;color:var(--gris)}
+.t-meta b{color:var(--ardoise)}
+.t-consent{font-size:13px;color:var(--gris2);border-top:1px solid var(--filet);padding-top:12px}
+.t-video{display:flex;align-items:center;gap:14px;background:var(--fond);border:1px solid var(--filet);border-radius:4px;padding:18px;color:var(--gris);font-style:italic;font-size:15px}
+.t-video .play{width:44px;height:44px;border-radius:50%;background:var(--marine);color:var(--or);display:grid;place-items:center;flex:0 0 auto;font-style:normal}
+.t-video .play svg{width:18px;height:18px}
+@media (max-width:860px){.tgrid{grid-template-columns:1fr}.tcard.big{grid-row:auto;padding:28px}.tcard.big .t-quote{font-size:24px}}
+
+/* Suite : arc en quatre temps */
+#suite{background:#fff}
+.arc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.arc:before{content:"";position:absolute;left:12.5%;right:12.5%;top:8px;height:1px;background:var(--filet)}
+.pastille{display:block;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--gris);background:#fff;margin:0 auto 18px;position:relative;z-index:1}
+.arc-item.on .pastille{background:var(--bordeaux);border-color:var(--bordeaux)}
+.arc-card{border:1px solid var(--filet);background:var(--fond);border-radius:4px;padding:24px;height:calc(100% - 36px)}
+.arc-item.on .arc-card{background:var(--marine);border-color:var(--marine);color:var(--clair)}
+.stage{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--bordeaux);margin-bottom:6px}
+.arc-item.on .stage{color:var(--or)}
+.arc-card .num{font-family:var(--serif);font-weight:700;font-size:30px;color:var(--cuivre);line-height:1;margin-bottom:12px}
+.arc-item.on .num{color:var(--or)}
+.arc-card .d{font-size:16px}
+.here{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--nuit);background:var(--or);border-radius:4px;padding:3px 8px}
+.more{display:inline-flex;align-items:center;gap:10px;margin-top:30px;color:var(--bordeaux);font-weight:700;text-decoration:none}
+.more svg{width:18px;height:18px}
+.more:hover{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:860px){
+  .arc{grid-template-columns:1fr}
+  .arc:before{display:none}
+  .arc-item{display:grid;grid-template-columns:18px 1fr;column-gap:16px}
+  .pastille{margin:24px 0 0}
+  .arc-card{height:auto}
+}
+
+/* Bon a savoir */
+#faq{background:var(--fond)}
+.faq{border-top:1px solid var(--filet);max-width:900px}
+.faq details{border-bottom:1px solid var(--filet)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-family:var(--serif);font-weight:700;font-size:20px;color:var(--nuit)}
+.faq summary::-webkit-details-marker{display:none}
+.pm{width:30px;height:30px;border:1px solid var(--or);border-radius:50%;display:grid;place-items:center;color:var(--or);flex:0 0 auto;font-family:var(--sans);font-size:20px;line-height:1;transition:transform .2s}
+.faq details[open] .pm{transform:rotate(45deg)}
+.faq .ans{padding:0 46px 22px 0;max-width:780px}
+
+/* Prochaine etape */
+.fin .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.fin .note-inline{grid-column:1/-1;margin-bottom:0}
+.book{background:var(--bordeaux);border-radius:6px;padding:22px 24px;display:flex;align-items:center;gap:16px;color:#fff;text-decoration:none}
+.book>svg{width:40px;height:40px;flex:0 0 auto}
+.book .t{font-family:var(--serif);font-weight:700;font-size:20px;display:block}
+.book .s{font-size:15px;color:#EBCFCF}
+.book .go{margin-left:auto;background:var(--or);color:var(--nuit);font-weight:700;font-size:13px;letter-spacing:.14em;border-radius:6px;padding:10px 14px;white-space:nowrap}
+.contact{background:var(--marine);border-radius:6px;padding:22px 24px;display:flex;gap:18px;align-items:center;margin-top:16px}
+.medal{width:84px;height:84px;border-radius:50%;background:var(--nuit);border:1.5px solid var(--or);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:28px;color:var(--or);flex:0 0 auto}
+img.medal{display:block;object-fit:cover;padding:0;overflow:hidden}
+.contact .n{font-family:var(--serif);font-weight:700;font-size:20px;color:#fff}
+.contact .r{color:var(--or);font-size:15px}
+.contact ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;font-size:15px}
+.contact li{display:flex;align-items:center;gap:8px}
+.contact li svg{width:16px;height:16px;color:var(--or);flex:0 0 auto}
+.contact a{color:#fff;text-decoration:none}
+.contact a:hover{text-decoration:underline}
+@media (max-width:860px){.fin .wrap{grid-template-columns:1fr;gap:28px}}
+@media (max-width:480px){.book{flex-wrap:wrap}.book .go{margin-left:0}.contact{align-items:flex-start}.medal{width:64px;height:64px;font-size:22px}}
+
+/* Pied de page */
+.foot{background:var(--nuit);border-top:1px solid var(--dline);padding:28px 0 84px;color:var(--clair2);font-size:14px}
+.band{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.plus{width:26px;height:26px;background:var(--bordeaux);color:#fff;display:grid;place-items:center;font-weight:700}
+.band .lg{font-weight:700;letter-spacing:.14em;color:var(--or);font-size:13px}
+.band .st{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.1em;color:var(--gris2)}
+.band .st i{width:9px;height:9px;border-radius:50%;border:1px solid currentColor;display:inline-block}
+.band .st.on{color:var(--or);font-weight:700}
+.band .st.on i{background:var(--or)}
+.band .sep{width:28px;height:1px;background:#2A3B5C}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px}
+
+/* Mode kiosque plein ecran */
+.kx{position:fixed;inset:0;z-index:200;background:var(--nuit);color:var(--clair);display:grid;grid-template-rows:auto 1fr auto;padding:28px clamp(20px,4vw,64px)}
+.kx[hidden]{display:none}
+.kx-top{display:flex;justify-content:space-between;align-items:center}
+.kx-top .k-brand{font-size:14px}
+.kx-main{display:grid;grid-template-columns:1.45fr .55fr;gap:6vw;align-items:center}
+.kx-text{animation:fade .45s ease}
+.kx-text .kicker{font-size:clamp(14px,1.3vw,20px)}
+.kx .kx-title{font-size:clamp(36px,5.4vw,88px)}
+.kx-body{font-size:clamp(18px,1.9vw,30px);max-width:920px;margin-top:26px}
+.kx-qr{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.qr-box{background:#fff;padding:16px;border-radius:8px;width:min(24vw,290px);aspect-ratio:1/1;display:grid;place-items:center}
+.qr-box svg{width:100%;height:100%}
+.qr-fb{font-family:var(--serif);font-weight:700;color:var(--nuit);font-size:15px;text-align:center}
+.qr-cap{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--or);text-transform:uppercase;margin-top:6px}
+.qr-url{font-family:var(--serif);font-weight:700;font-size:clamp(20px,2vw,32px);color:#fff}
+.qr-sub{font-size:16px;color:var(--clair2)}
+.kx-segs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:24px}
+.kx-seg{height:4px;background:var(--dline);position:relative;overflow:hidden;border-radius:2px}
+.kx-seg i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--or)}
+.kx-seg.done i{width:100%}
+.kx-seg.run i{animation:prog var(--kdur,8s) linear forwards}
+.kx.paused .kx-seg.run i{animation-play-state:paused}
+@media (max-width:760px){.kx-main{grid-template-columns:1fr;gap:28px;align-content:center}.qr-box{width:150px}}
+
+/* Notes de conception */
+.note-inline{display:none;border:1px dashed var(--or);background:rgba(193,160,119,.10);border-radius:6px;padding:12px 16px;margin:0 0 28px;font-size:14px;line-height:1.5;color:var(--ardoise);max-width:900px}
+.dark .note-inline,.k-panel .note-inline{color:var(--clair)}
+.note-inline b{display:block;font-size:11px;letter-spacing:.18em;color:var(--or);margin-bottom:4px}
+body.notes-on .note-inline{display:block}
+.k-panel .note-inline{margin:22px 0 0}
+.fab{position:fixed;right:16px;bottom:16px;z-index:95;display:inline-flex;align-items:center;gap:8px;background:var(--marine);color:var(--or);border:1px solid var(--or);border-radius:999px;padding:10px 16px;font:700 14px var(--sans);cursor:pointer}
+.fab svg{width:18px;height:18px}
+.fab .fs{display:none}
+body.kx-on .fab{display:none}
+@media (max-width:600px){.fab{padding:8px 12px;font-size:13px;right:12px;bottom:12px}.fab .fl{display:none}.fab .fs{display:inline}}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(480px,100%);background:#fff;border-left:1px solid var(--filet);z-index:90;transform:translateX(102%);visibility:hidden;transition:transform .25s ease,visibility .25s;overflow-y:auto;color:var(--ardoise);font-size:15px;line-height:1.55}
+.drawer.open{transform:none;visibility:visible}
+.dr-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--filet);padding:16px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;z-index:1}
+.dr-date{font-size:13px;color:var(--gris2);margin-bottom:4px}
+.dr-head .kicker{margin:0;color:var(--bordeaux)}
+.dr-x{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--filet);border-radius:50%;background:#fff;color:var(--nuit);cursor:pointer;flex:0 0 auto}
+.dr-x svg{width:16px;height:16px}
+.dr-body{padding:6px 22px 96px}
+.dr-body h3{font-family:var(--serif);font-size:17px;color:var(--nuit);margin:26px 0 10px;text-transform:uppercase;letter-spacing:.02em}
+.dr-body ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.dr-body p+p{margin-top:10px}
+.dr-body table{width:100%;border-collapse:collapse;font-size:14px}
+.dr-body th,.dr-body td{border-bottom:1px solid var(--filet);padding:8px 6px;text-align:left;vertical-align:top}
+.dr-body th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bordeaux)}
+.dr-body em{color:var(--nuit)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .k-slide,.kx-text{animation:none}
+  .bubble i{animation:none;opacity:.6}
+  .drawer{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Maquette · proposition V2 du 24-10-2026 · textes à valider avant mise en ligne</div>
+
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Legaswiss BP Studio, haut de page"><span class="mark">LEGASWISS</span><span class="tag">BP STUDIO</span></a>
+    <nav class="nav" aria-label="Sections de la page">
+      <a href="#situations">Situations</a>
+      <a href="#dossier">Le dossier</a>
+      <a href="#methode">Méthode</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#suite">La suite</a>
+      <a href="#faq">Bon à savoir</a>
+    </nav>
+    <a class="login" href="https://bp.legaswiss.com/login">Connexion</a>
+    <a class="btn btn-or btn-sm" href="https://bp.legaswiss.com/register?entree=entete">Démarrer</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero dark" id="top">
+  <div class="wrap">
+    <div class="hero-l">
+      <p class="note-inline"><b>NOTE DE CONCEPTION 1 · HERO</b>«&nbsp;Bancable&nbsp;» retiré au profit de prêt à présenter, décision du 24-10-2026. Un seul appel principal&nbsp;; le diagnostic offert reste en lien secondaire. Aucun délai affiché tant que Legaswiss n'a pas mesuré la durée réelle d'une conversation.</p>
+      <p class="kicker">BP Studio · Legaswiss Entrepreneur Studio</p>
+      <h1 class="title"><span class="a">Votre business plan, </span><span class="b">prêt à présenter</span></h1>
+      <p class="lead">Décrivez votre projet au fil d'une conversation guidée. BP Studio en rédige le récit et en chiffre les prévisions.</p>
+      <div class="cta-row">
+        <a class="btn btn-or" href="https://bp.legaswiss.com/register?entree=hero">Démarrer mon business plan<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="lnk" href="https://bp.legaswiss.com/contact?entree=hero">Réserver un diagnostic offert</a>
+      </div>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Premier jet gratuit</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sans carte bancaire</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Montants en CHF</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Conçu en Suisse</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="sheet s3"><span class="ftab">EXCEL</span><div class="sk-line w70"></div><div class="sk-line w45"></div></div>
+      <div class="sheet s2"><span class="ftab">WORD</span><div class="sk-line w70"></div><div class="sk-line w45"></div></div>
+      <div class="sheet s1">
+        <span class="ftab">PDF</span>
+        <p class="sk-k">BUSINESS PLAN</p>
+        <div class="sk-line w70"></div>
+        <div class="sk-line w45"></div>
+        <ul class="sk-list"><li>Résumé exécutif</li><li>Équipe</li><li>Marché</li><li>Stratégie</li></ul>
+        <div class="sk-table">
+          <span class="h"></span><span class="h"></span><span class="h"></span><span class="h"></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p class="sk-cap">Compte de résultat · Trésorerie · Bilan</p>
+      </div>
+      <div class="bubble"><span>Décrivez votre projet</span><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="situations" class="kiosk-sec">
+  <div class="wrap">
+    <p class="note-inline"><b>NOTE DE CONCEPTION 2 · CARROUSEL KIOSQUE</b>Ordre des cartes selon les volets&nbsp;: OBL avec la banque et la reprise, ROI avec le financement et le test, NOT avec l'associé. Défilement de 7 secondes par carte, arrêt au survol ou au focus. Le bouton Mode kiosque ouvre la séquence en plein écran avec un QR par situation, pour un salon ou un écran d'accueil.</p>
+    <div class="sec-head">
+      <p class="kicker">Votre situation</p>
+      <h2 class="title"><span class="a">Choisissez </span><span class="b">votre point de départ</span></h2>
+      <p class="lead">Chaque situation mène au même dossier, avec une étape suivante différente.</p>
+    </div>
+    <div class="kiosk" id="kiosk" role="region" aria-roledescription="carrousel" aria-label="Situations de départ">
+      <div class="k-bar">
+        <span class="k-brand">LEGASWISS · BP STUDIO</span>
+        <div class="k-ctrl">
+          <button type="button" class="k-btn" id="kPlay"></button>
+          <button type="button" class="k-btn" id="kFull" aria-label="Ouvrir le mode kiosque en plein écran"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Mode kiosque</span></button>
+        </div>
+      </div>
+      <div class="k-tabs" id="kTabs" role="tablist" aria-label="Situations"></div>
+      <div class="k-panel" id="kPanel" role="tabpanel"></div>
+    </div>
+  </div>
+</section>
+
+<section id="dossier">
+  <div class="wrap">
+    <p class="note-inline"><b>NOTE DE CONCEPTION 3 · DOSSIER</b>Contenu repris de l'accueil de bp.legaswiss.com relevé le 24-10-2026. Statut déclaré&nbsp;: à vérifier sur un export réel avant mise en ligne.</p>
+    <div class="sec-head">
+      <p class="kicker">Ce que vous obtenez</p>
+      <h2 class="title"><span class="a">Le récit et les chiffres, </span><span class="b">dans un seul dossier</span></h2>
+      <p class="lead">Deux parties, trois formats.</p>
+    </div>
+    <div class="doss">
+      <div class="card">
+        <p class="kicker">Le récit</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Résumé exécutif</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Équipe</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Marché</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Stratégie</li>
+        </ul>
+      </div>
+      <div class="card navy">
+        <p class="kicker">Les chiffres</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Compte de résultat sur trois ans</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Plan de trésorerie</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bilan prévisionnel</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formats">
+      <div class="fmt"><b>PDF</b><span>à présenter</span></div>
+      <div class="fmt"><b>WORD</b><span>à modifier</span></div>
+      <div class="fmt"><b>EXCEL</b><span>à formules</span></div>
+    </div>
+    <div class="encadre">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <p><strong>Vous gardez la main</strong>Le Word se retravaille librement, l'Excel garde ses formules pour tester une autre hypothèse.</p>
+    </div>
+  </div>
+</section>
+
+<section id="methode" class="dark">
+  <div class="wrap">
+    <p class="note-inline"><b>NOTE DE CONCEPTION 4 · FRISE</b>Frise des phases&nbsp;: premier jet en autonomie sur les quatre premiers temps, accompagnement en option au cinquième. Champs d'inscription repris de la page Inscription de bp.legaswiss.com.</p>
+    <div class="sec-head">
+      <p class="kicker">Le parcours</p>
+      <h2 class="title"><span class="a">Une conversation, </span><span class="b">puis un dossier</span></h2>
+      <p class="lead">Cinq temps, de l'inscription au rendez-vous avec le studio.</p>
+    </div>
+    <ol class="frise">
+      <li class="step"><span class="dot">1</span><h3>Ouvrir son espace</h3><p>Nom, e-mail et mot de passe.</p></li>
+      <li class="step"><span class="dot">2</span><h3>Décrire le projet</h3><p>Des questions simples, une à la fois.</p></li>
+      <li class="step"><span class="dot">3</span><h3>Laisser le dossier se construire</h3><p>Le récit et les chiffres s'écrivent au fil des réponses.</p></li>
+      <li class="step"><span class="dot">4</span><h3>Télécharger</h3><p>Le dossier complet, au format de votre choix.</p></li>
+      <li class="step last"><span class="dot">5</span><h3>Aller plus loin</h3><p>Diagnostic offert, puis trois mois d'on-boarding avec Legaswiss.</p></li>
+    </ol>
+    <div class="phases">
+      <div class="ph ph-1"><b>PREMIER JET</b>En autonomie</div>
+      <div class="ph ph-2"><b>ACCOMPAGNEMENT</b>En option</div>
+    </div>
+  </div>
+</section>
+
+<section id="temoignages">
+  <div class="wrap">
+    <p class="note-inline"><b>NOTE DE CONCEPTION 5 · TÉMOIGNAGES</b>Encarts vides&nbsp;: section masquée tant qu'aucun témoignage n'est validé. Guide de collecte dans les notes générales.</p>
+    <div class="sec-head">
+      <p class="kicker">Témoignages</p>
+      <h2 class="title"><span class="a">Retours </span><span class="b">d'entrepreneurs</span></h2>
+    </div>
+    <div class="tgrid">
+      <article class="tcard big">
+        <span class="t-label">ENCART 1 · À COMPLÉTER</span>
+        <p class="t-sit">[Situation&nbsp;: banque, reprise, financement, test du projet ou associé]</p>
+        <blockquote class="t-quote"><span class="ph-txt">«&nbsp;[Citation du client, trente mots au plus, avec un fait daté ou chiffré]&nbsp;»</span></blockquote>
+        <div class="t-who"><span class="t-avatar">Photo</span><div class="t-meta"><b>[Prénom Nom]</b><br>[Fonction] · [Société], [Canton]</div></div>
+        <p class="t-consent">Accord écrit de diffusion&nbsp;: [JJ-MM-AAAA]</p>
+      </article>
+      <article class="tcard">
+        <span class="t-label">ENCART 2 · À COMPLÉTER</span>
+        <p class="t-sit">[Situation]</p>
+        <blockquote class="t-quote"><span class="ph-txt">«&nbsp;[Citation du client, avec un fait daté ou chiffré]&nbsp;»</span></blockquote>
+        <div class="t-who"><span class="t-avatar">Photo</span><div class="t-meta"><b>[Prénom Nom]</b><br>[Fonction] · [Société], [Canton]</div></div>
+        <p class="t-consent">Accord écrit de diffusion&nbsp;: [JJ-MM-AAAA]</p>
+      </article>
+      <article class="tcard">
+        <span class="t-label">ENCART 3 · À COMPLÉTER</span>
+        <div class="t-video"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg></span><span>[Vidéo courte et sous-titrée du client]</span></div>
+        <div class="t-who"><span class="t-avatar">Photo</span><div class="t-meta"><b>[Prénom Nom]</b><br>[Fonction] · [Société], [Canton]</div></div>
+        <p class="t-consent">Accord écrit de diffusion&nbsp;: [JJ-MM-AAAA]</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="suite">
+  <div class="wrap">
+    <p class="note-inline"><b>NOTE DE CONCEPTION 6 · LA SUITE</b>Arc en quatre temps de la charte, phase active en couleur. Correspondance avec les offres de legaswiss.com&nbsp;: proposition à valider avec Loïc. Prix non affichés&nbsp;: la page Tarifs reste la référence.</p>
+    <div class="sec-head">
+      <p class="kicker">La suite du projet</p>
+      <h2 class="title"><span class="a">Un partenaire, </span><span class="b">tout le cycle de vie</span></h2>
+      <p class="lead">BP Studio ouvre la phase de lancement&nbsp;; le studio accompagne les trois suivantes.</p>
+    </div>
+    <div class="arc">
+      <div class="arc-item on"><span class="pastille"></span><div class="arc-card"><p class="stage">LANCEMENT</p><p class="num">01</p><p class="d">BP Studio, diagnostic offert, formules Fondation, Élan ou Envergure, constitution de la société.</p><span class="here">VOUS ÊTES ICI</span></div></div>
+      <div class="arc-item"><span class="pastille"></span><div class="arc-card"><p class="stage">ACCÉLÉRATION</p><p class="num">02</p><p class="d">Politique commerciale et stratégie financière.</p></div></div>
+      <div class="arc-item"><span class="pastille"></span><div class="arc-card"><p class="stage">VALORISATION</p><p class="num">03</p><p class="d">Gouvernance et suivi des indicateurs de pilotage.</p></div></div>
+      <div class="arc-item"><span class="pastille"></span><div class="arc-card"><p class="stage">SÉCURISATION DU PATRIMOINE</p><p class="num">04</p><p class="d">Protection du dirigeant et ingénierie patrimoniale.</p></div></div>
+    </div>
+    <a class="more" href="https://bp.legaswiss.com/pricing?entree=suite">Voir les formules et les tarifs<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="note-inline"><b>NOTE DE CONCEPTION 7 · BON À SAVOIR</b>Chaque réponse porte sa condition ou sa limite. Confidentialité des données absente faute de réponse documentée&nbsp;: à ajouter après validation juridique.</p>
+    <div class="sec-head">
+      <p class="kicker">Bon à savoir</p>
+      <h2 class="title"><span class="a">Quatre réponses </span><span class="b">avant de commencer</span></h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Le premier jet est gratuit, sans limite de durée<span class="pm" aria-hidden="true">+</span></summary>
+        <div class="ans"><p>Ouvrir un compte et obtenir le premier jet ne coûte rien. Le travail avec un business officer dédié commence avec la formule Élan.</p></div>
+      </details>
+      <details>
+        <summary>La décision revient à la banque<span class="pm" aria-hidden="true">+</span></summary>
+        <div class="ans"><p>Le dossier structure votre demande. L'analyse et l'accord restent du ressort de la banque ou de l'investisseur.</p></div>
+      </details>
+      <details>
+        <summary>Le diagnostic est offert<span class="pm" aria-hidden="true">+</span></summary>
+        <div class="ans"><p>Il se réserve en ligne, par créneau direct ou par message. Le choix d'une formule d'accompagnement vient ensuite.</p></div>
+      </details>
+      <details>
+        <summary>La société se crée ensuite avec Legaswiss<span class="pm" aria-hidden="true">+</span></summary>
+        <div class="ans"><p>L'option Constitution juridique couvre le notaire, la légalisation, la relation bancaire et l'inscription au Registre du commerce, pour une Sàrl comme pour une SA. Une Sàrl exige un capital social minimum de CHF 20.000.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="fin" class="dark fin">
+  <div class="wrap">
+    <p class="note-inline"><b>NOTE DE CONCEPTION 8 · PROCHAINE ÉTAPE</b>Coordonnées et délai de réponse&nbsp;: page Contact de bp.legaswiss.com.</p>
+    <div class="fin-l">
+      <p class="kicker">Prochaine étape</p>
+      <h2 class="title"><span class="a">Tout part </span><span class="b">de la première question</span></h2>
+      <p class="lead">Vous préférez en parler d'abord&nbsp;: Loïc Morand répond sous 24 heures.</p>
+      <div class="cta-row">
+        <a class="btn btn-or" href="https://bp.legaswiss.com/register?entree=fin">Démarrer mon business plan<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="fin-r">
+      <a class="book" href="https://bp.legaswiss.com/contact?entree=fin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+        <span><span class="t">Réserver un diagnostic offert</span><span class="s">Créneau en direct ou message écrit</span></span>
+        <span class="go">RÉSERVER</span>
+      </a>
+      <div class="contact">
+        <img class="medal" src="data:image/jpeg;base64,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" alt="Portrait de Loïc Morand" width="84" height="84">
+        <div>
+          <div class="n">Loïc Morand</div>
+          <div class="r">Fondateur · Legaswiss</div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><a href="mailto:loic@legaswiss.com">loic@legaswiss.com</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2z"/></svg><a href="https://wa.me/41798358528">+41 79 835 85 28 · WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="band" aria-label="Les quatre phases Legaswiss, phase de lancement active">
+      <span class="plus" aria-hidden="true">+</span><span class="lg">LEGASWISS</span>
+      <span class="sep"></span><span class="st on"><i></i>LANCEMENT</span>
+      <span class="sep"></span><span class="st"><i></i>ACCÉLÉRATION</span>
+      <span class="sep"></span><span class="st"><i></i>VALORISATION</span>
+      <span class="sep"></span><span class="st"><i></i>SÉCURISATION DU PATRIMOINE</span>
+    </div>
+    <div class="foot-links">
+      <span>Legaswiss · Entrepreneur Studio · Genève</span>
+      <span>Mentions légales</span><span>Confidentialité</span><span>Cookies</span>
+      <span>© 2026 Legaswiss</span>
+    </div>
+  </div>
+</footer>
+
+<div class="kx" id="kx" role="dialog" aria-modal="true" aria-label="Mode kiosque" hidden>
+  <div class="kx-top">
+    <span class="k-brand">LEGASWISS · BP STUDIO</span>
+    <button type="button" class="k-btn" id="kxClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Quitter · Échap</span></button>
+  </div>
+  <div class="kx-main">
+    <div class="kx-text" id="kxText"></div>
+    <div class="kx-qr">
+      <div class="qr-box" id="qrBox"></div>
+      <p class="qr-cap">Scannez pour démarrer</p>
+      <p class="qr-url">bp.legaswiss.com</p>
+      <p class="qr-sub">Premier jet gratuit</p>
+    </div>
+  </div>
+  <div class="kx-segs" id="kxSegs"></div>
+</div>
+
+<button type="button" class="fab" id="fab" aria-pressed="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20z"/><path d="M14 3.5V8h4M9.5 12h6M9.5 15.5h6"/></svg><span class="fl">Notes de conception</span><span class="fs">Notes</span></button>
+
+<aside class="drawer" id="drawer" aria-label="Notes de conception" aria-hidden="true">
+  <div class="dr-head">
+    <div>
+      <p class="dr-date">État au 24-10-2026</p>
+      <p class="kicker">Notes de conception</p>
+    </div>
+    <button type="button" class="dr-x" id="drClose" aria-label="Fermer le panneau des notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="dr-body">
+    <p>Proposition V2 de landing pour BP Studio, à soumettre à Loïc. Site relevé le 24-10-2026, outil non testé de l'intérieur.</p>
+
+    <h3>Relevé de la page actuelle</h3>
+    <ul>
+      <li>Gratuité&nbsp;: quatre formulations coexistent, «&nbsp;offert pour commencer&nbsp;», «&nbsp;Votre premier business plan est offert&nbsp;», «&nbsp;Offert pendant le lancement&nbsp;» sur legaswiss.com, et aucune mention sur la page Tarifs.</li>
+      <li>Promesse&nbsp;: «&nbsp;bancable&nbsp;» figure dans trois titres, accueil, section dossier et page Tarifs, sans condition ni limite.</li>
+      <li>Concurrence interne&nbsp;: la formule Élan inclut la rédaction du business plan stratégique et financier, tandis que l'accueil annonce un dossier complet offert. Le visiteur ne voit pas ce que le payant ajoute.</li>
+      <li>Appels à l'action pour démarrer&nbsp;: Créer mon business plan, Commencer, Ouvrir mon espace et démarrer, Créer un compte. Pour le rendez-vous&nbsp;: Réserver un appel gratuit, Réserver mon appel gratuit, Réserver un appel, Nous contacter, Réservez un créneau en direct.</li>
+      <li>Rendez-vous&nbsp;: appel gratuit, appel découverte et diagnostic offert désignent, selon toute vraisemblance, le même échange.</li>
+      <li>Sortie de parcours&nbsp;: la section L'étape d'après renvoie vers l'accueil de legaswiss.com, sans lien vers la formule concernée.</li>
+      <li>Page Tarifs&nbsp;: Fondation porte la mention Recommandée pour vous, alors que la rédaction du business plan n'entre dans les formules qu'à partir d'Élan.</li>
+      <li>Absents&nbsp;: prix sur la landing, témoignages, réponses aux objections, mention de confidentialité et case d'acceptation à l'inscription.</li>
+      <li>Délai&nbsp;: «&nbsp;en quelques minutes&nbsp;» reste déclaré, sans mesure publiée.</li>
+    </ul>
+
+    <h3>Nouvelle logique</h3>
+    <p>Un appel principal, Démarrer mon business plan, au même libellé partout. Le diagnostic offert passe en lien secondaire en haut de page, puis devient l'étape suivante une fois le dossier téléchargé.</p>
+    <p>Échelle de valeur&nbsp;: premier jet gratuit en autonomie, diagnostic offert, on-boarding de trois mois en Fondation, Élan ou Envergure, constitution, puis accélération, valorisation et sécurisation du patrimoine.</p>
+    <p>Qualification&nbsp;: les réponses de la conversation renseignent la grille du studio, besoin de structuration, capacité de paiement, échéance déclenchante, produit de récurrence. Le business officer ouvre le diagnostic dossier en main. Faisabilité côté outil à vérifier.</p>
+    <p>Boucle prescripteur&nbsp;: une mention Préparé avec BP Studio · Legaswiss en pied de page des exports met la marque sous les yeux du conseiller bancaire ou de la fiduciaire qui reçoit le dossier.</p>
+    <p>Mesure&nbsp;: les liens internes portent les paramètres entree et situation, sans UTM, pour ne pas écraser la source d'origine dans les statistiques. Le QR du mode kiosque porte des UTM, puisqu'il amène un trafic extérieur.</p>
+
+    <h3>Messages clés par volet (OBL, ROI, NOT)</h3>
+    <ul>
+      <li>Offre globale. Motivation première&nbsp;: obtenir l'accord d'une banque, d'un associé ou d'un investisseur. Besoin associé&nbsp;: un dossier qui réunit récit et chiffres, lisible sans son auteur.</li>
+      <li>Langage partagé. Phrase portable par toute l'équipe, sans jargon&nbsp;: <em>BP Studio, votre business plan en une conversation, prêt à présenter.</em></li>
+      <li>Volets déclencheurs. OBL d'abord, la banque qui demande le dossier et la reprise à financer&nbsp;; ROI ensuite, le financement à obtenir et le projet à tester sans frais&nbsp;; NOT enfin, la crédibilité devant un associé. Le carrousel suit cet ordre.</li>
+      <li>Adressage dynamique. Initiateur&nbsp;: l'entrepreneur qui ouvre un compte. Prescripteurs&nbsp;: conseiller bancaire, fiduciaire, apporteurs du studio. Décideur final&nbsp;: l'entrepreneur pour la formule, la banque pour le financement. Le PDF passe de l'un à l'autre et porte la marque.</li>
+    </ul>
+
+    <h3>Avant et après</h3>
+    <table>
+      <thead><tr><th>Élément</th><th>Page actuelle</th><th>Proposition</th></tr></thead>
+      <tbody>
+        <tr><td>Titre</td><td>«&nbsp;Votre business plan bancable, la première pierre de votre aventure.&nbsp;»</td><td>Votre business plan, prêt à présenter</td></tr>
+        <tr><td>Gratuité</td><td>Quatre formulations</td><td>Premier jet gratuit, sans limite de durée, même phrase sur bp.legaswiss.com et legaswiss.com</td></tr>
+        <tr><td>Promesse</td><td>Bancable, sans condition</td><td>Prêt à présenter&nbsp;; la décision revient à la banque, écrit dans Bon à savoir</td></tr>
+        <tr><td>Démarrer</td><td>Quatre libellés</td><td>Démarrer mon business plan</td></tr>
+        <tr><td>Rendez-vous</td><td>Cinq libellés</td><td>Réserver un diagnostic offert</td></tr>
+        <tr><td>Après le dossier</td><td>Lien vers l'accueil de legaswiss.com</td><td>Étape suivante propre à chaque situation, puis arc des quatre phases</td></tr>
+        <tr><td>Preuve</td><td>Aucune</td><td>Trois encarts témoignages et un guide de collecte</td></tr>
+      </tbody>
+    </table>
+
+    <h3>À valider avant mise en ligne</h3>
+    <ul>
+      <li>Nom produit BP Studio, repris du paramètre de campagne bp_studio du site.</li>
+      <li>Couverture du cas reprise par l'outil, non vérifiée.</li>
+      <li>Adresse de la page Reprise de legaswiss.com, pour le lien de la carte reprise.</li>
+      <li>Nombre de premiers jets gratuits par compte.</li>
+      <li>Confidentialité des données de projet et case d'acceptation à l'inscription&nbsp;: textes à faire valider par un juriste.</li>
+      <li>Durée réelle d'une conversation, à mesurer avant d'afficher un délai.</li>
+      <li>Paramètre situation lu par l'outil pour orienter la première question&nbsp;: développement à prévoir.</li>
+      <li>Mention Préparé avec BP Studio · Legaswiss dans les exports.</li>
+      <li>Correspondance des quatre phases avec les offres de legaswiss.com.</li>
+      <li>Section témoignages masquée tant qu'aucun encart n'est validé.</li>
+      <li>Bouton Mode kiosque réservé aux salons et aux écrans d'accueil&nbsp;: masqué sur la page publique, accessible par l'adresse ?kiosque=1.</li>
+      <li>Page Tarifs et legaswiss.com alignées sur la règle de gratuité.</li>
+      <li>Versions allemande et anglaise.</li>
+    </ul>
+
+    <h3>Guide de collecte des témoignages</h3>
+    <ul>
+      <li>Une situation par témoignage, prise parmi les cinq cartes du carrousel.</li>
+      <li>Un fait daté ou chiffré&nbsp;: compte ouvert, crédit accordé, associé entré au capital, avec sa date.</li>
+      <li>Trente mots au plus, dans les mots du client, relus par lui.</li>
+      <li>Prénom, nom, fonction, société et canton&nbsp;; photo facultative.</li>
+      <li>Accord écrit et daté, obtenu avant diffusion.</li>
+      <li>Témoignage déjà publié sur legaswiss.com&nbsp;: Valentin Fesquet, Helvetia Vidéo Production, sur le processus global. Réutilisable dans l'encart 1 avec son accord, si son parcours a inclus le business plan.</li>
+    </ul>
+
+    <h3>Sources</h3>
+    <ul>
+      <li>bp.legaswiss.com, pages Accueil, Tarifs, Inscription et Contact, relevées le 24-10-2026.</li>
+      <li>www.legaswiss.com, accueil, relevé le 24-10-2026.</li>
+      <li>Grille publique de référence au 13-09-2026.</li>
+      <li>Accueil bp&nbsp;: récit, chiffres sur trois ans, trois formats, échange guidé, mention Made in Switzerland reprise en Conçu en Suisse.</li>
+      <li>Tarifs&nbsp;: on-boarding de trois mois&nbsp;; Fondation CHF 490 HT, Élan CHF 1.500 HT, Envergure CHF 3.500 HT, option Constitution juridique CHF 2.500 HT, capital minimum d'une Sàrl CHF 20.000 (art. 773 CO). Montants identiques à la grille de référence, non affichés sur la landing.</li>
+      <li>Inscription&nbsp;: nom, e-mail, mot de passe et confirmation, sans champ de paiement.</li>
+      <li>Contact&nbsp;: Loïc Morand, Fondateur · Legaswiss, réponse sous 24 h, +41 79 835 85 28, loic@legaswiss.com.</li>
+      <li>Échelle de preuve&nbsp;: déclaré pour l'ensemble, faute de test de l'outil.</li>
+    </ul>
+  </div>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js';document.head.appendChild(s);"></script>
+<script>
+(function(){
+  var REG='https://bp.legaswiss.com/register',PRICING='https://bp.legaswiss.com/pricing',CONTACT='https://bp.legaswiss.com/contact',HOME='https://www.legaswiss.com';
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function ic(p,w){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(w||1.8)+'" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+p+'</svg>';}
+  var IC={
+    arrow:ic('<path d="M5 12h14M13 6l6 6-6 6"/>',2),
+    pause:ic('<path d="M9 5v14M15 5v14"/>',2.2),
+    play:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>',
+    bank:ic('<path d="M3 9.5L12 4l9 5.5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3.5 20.5h17"/>'),
+    key:ic('<circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l2 2M14 9l2 2"/>'),
+    chart:ic('<path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/>'),
+    compass:ic('<circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'),
+    users:ic('<circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 5.2a3.5 3.5 0 0 1 0 6.6M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/>')
+  };
+  var S=[
+    {id:'banque',vec:'OBL',short:'Banque',tab:'Ma banque demande un business plan',ic:'bank',k:'Situation 01 · Banque',a:'Ma banque me demande ',b:'un business plan',
+     t:"Le dossier rassemble le récit du projet et ses prévisions sur trois ans, dans un document que votre conseiller peut lire sans vous.",
+     n:"Constituer la Sàrl ou la SA avec l'option Constitution juridique de Legaswiss.",h:PRICING},
+    {id:'reprise',vec:'OBL',short:'Reprise',tab:'Je reprends une entreprise',ic:'key',k:'Situation 02 · Reprise',a:'Je reprends ',b:'une entreprise',
+     t:"Vous posez le projet de reprise et ses chiffres par écrit avant de rencontrer le cédant et la banque.",
+     n:"L'accompagnement Reprise de Legaswiss.",h:HOME},
+    {id:'financement',vec:'ROI',short:'Financement',tab:'Je cherche un financement',ic:'chart',k:'Situation 03 · Financement',a:'Je cherche ',b:'un financement',
+     t:"Pour un crédit comme pour une levée de fonds, la demande s'appuie sur un plan de trésorerie chiffré et sur le récit qui le justifie.",
+     n:"La formule Élan ajoute un business officer dédié et la rédaction du business plan stratégique et financier.",h:PRICING},
+    {id:'cadrage',vec:'ROI',short:'Test',tab:'Je veux tester mon projet',ic:'compass',k:'Situation 04 · Cadrage',a:'Je veux tester ',b:'mon projet',
+     t:"Répondre aux questions suffit pour voir si le modèle tient en chiffres, sans engager de frais.",
+     n:"Un diagnostic offert avec Loïc Morand, fondateur de Legaswiss.",h:CONTACT},
+    {id:'associe',vec:'NOT',short:'Associé',tab:'Je dois convaincre un associé',ic:'users',k:'Situation 05 · Associé',a:'Je dois convaincre ',b:'un associé',
+     t:"Vos hypothèses passent à l'écrit et en chiffres\u00a0: la discussion part d'un document commun.",
+     n:"La formule Envergure ajoute une équipe d'experts en finance, droit, fiscalité, digital et IA.",h:PRICING}
+  ];
+
+  /* Carrousel de la page */
+  var kiosk=document.getElementById('kiosk'),tabs=document.getElementById('kTabs'),panel=document.getElementById('kPanel'),playBtn=document.getElementById('kPlay');
+  var cur=0,userPaused=!!reduce,hover=false,off=false;
+  S.forEach(function(s,i){
+    var b=document.createElement('button');
+    b.type='button';b.className='k-tab';b.id='tab-'+s.id;
+    b.setAttribute('role','tab');b.setAttribute('aria-controls','kPanel');
+    b.innerHTML='<span class="num">0'+(i+1)+'</span><span class="lbl">'+s.tab+'</span><span class="short">'+s.short+'</span><span class="prog"></span>';
+    b.addEventListener('click',function(){go(i,true);});
+    tabs.appendChild(b);
+  });
+  function slide(s,i){
+    return '<div class="k-slide">'+
+      '<span class="k-big" aria-hidden="true">0'+(i+1)+'</span>'+
+      '<p class="kicker">'+IC[s.ic]+s.k+'</p>'+
+      '<h3 class="title k-title"><span class="a">'+s.a+'</span><span class="b">'+s.b+'</span></h3>'+
+      '<p class="k-text">'+s.t+'</p>'+
+      '<a class="k-next" href="'+s.h+'?entree=carrousel&amp;situation='+s.id+'"><strong>Étape suivante</strong><span>'+s.n+'</span></a>'+
+      '<a class="btn btn-or" href="'+REG+'?entree=carrousel&amp;situation='+s.id+'">Démarrer avec cette situation'+IC.arrow+'</a>'+
+      '<p class="note-inline"><b>NOTE DE CONCEPTION · CARTE 0'+(i+1)+'</b>Volet\u00a0: '+s.vec+'.'+(s.id==='reprise'?' Couverture du cas reprise par l\'outil à confirmer.':'')+'</p>'+
+    '</div>';
+  }
+  function sync(){
+    kiosk.classList.toggle('paused',userPaused||hover||off);
+    playBtn.innerHTML=userPaused?IC.play+'<span>Lecture</span>':IC.pause+'<span>Pause</span>';
+    playBtn.setAttribute('aria-label',userPaused?'Reprendre le défilement':'Mettre le défilement en pause');
+  }
+  function run(){
+    var p=tabs.children[cur].querySelector('.prog');
+    p.classList.remove('run');void p.offsetWidth;
+    if(!userPaused)p.classList.add('run');
+    sync();
+  }
+  function go(i,manual){
+    cur=i;
+    Array.prototype.forEach.call(tabs.children,function(t,j){
+      t.setAttribute('aria-selected',j===i?'true':'false');
+      t.tabIndex=j===i?0:-1;
+      t.querySelector('.prog').classList.remove('run');
+    });
+    panel.innerHTML=slide(S[i],i);
+    panel.setAttribute('aria-labelledby','tab-'+S[i].id);
+    panel.setAttribute('aria-live',manual?'polite':'off');
+    if(window.innerWidth<=860){var at=tabs.children[i];tabs.scrollTo({left:Math.max(0,at.offsetLeft-16),behavior:reduce?'auto':'smooth'});}
+    run();
+  }
+  tabs.addEventListener('animationend',function(e){if(e.target.classList.contains('prog'))go((cur+1)%S.length,false);});
+  tabs.addEventListener('keydown',function(e){
+    var n=null;
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')n=(cur+1)%S.length;
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=(cur-1+S.length)%S.length;
+    if(n!==null){e.preventDefault();go(n,true);tabs.children[n].focus();}
+  });
+  playBtn.addEventListener('click',function(){userPaused=!userPaused;run();});
+  kiosk.addEventListener('mouseenter',function(){hover=true;sync();});
+  kiosk.addEventListener('mouseleave',function(){hover=false;sync();});
+  kiosk.addEventListener('focusin',function(){hover=true;sync();});
+  kiosk.addEventListener('focusout',function(e){if(!kiosk.contains(e.relatedTarget)){hover=false;sync();}});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){off=!en[0].isIntersecting;sync();},{threshold:.25}).observe(kiosk);}
+  var sx=null;
+  panel.addEventListener('pointerdown',function(e){sx=e.clientX;});
+  panel.addEventListener('pointerup',function(e){
+    if(sx===null)return;var dx=e.clientX-sx;sx=null;
+    if(Math.abs(dx)>50)go(dx<0?(cur+1)%S.length:(cur-1+S.length)%S.length,true);
+  });
+  go(0,false);
+
+  /* Mode kiosque plein ecran */
+  var kx=document.getElementById('kx'),kxText=document.getElementById('kxText'),qrBox=document.getElementById('qrBox'),segs=document.getElementById('kxSegs');
+  var kxCur=0,kxPaused=false,wasFS=false,before=userPaused;
+  S.forEach(function(){var d=document.createElement('div');d.className='kx-seg';d.innerHTML='<i></i>';segs.appendChild(d);});
+  function qrUrl(s){return REG+'?utm_source=kiosque&utm_medium=qr&utm_campaign=bp_studio&utm_content='+s.id+'&situation='+s.id;}
+  function makeQR(s){
+    if(window.qrcode){try{var q=window.qrcode(0,'M');q.addData(qrUrl(s));q.make();qrBox.innerHTML=q.createSvgTag({cellSize:8,margin:0,scalable:true,title:'QR vers l\'inscription BP Studio, situation '+s.short});return;}catch(err){}}
+    qrBox.innerHTML='<span class="qr-fb">bp.legaswiss.com<wbr>/register</span>';
+  }
+  function kxGo(i){
+    kxCur=i;var s=S[i];
+    kxText.innerHTML='<p class="kicker">'+IC[s.ic]+s.k+'</p><h2 class="title kx-title"><span class="a">'+s.a+'</span><span class="b">'+s.b+'</span></h2><p class="kx-body">'+s.t+'</p>';
+    kxText.style.animation='none';void kxText.offsetWidth;kxText.style.animation='';
+    makeQR(s);
+    Array.prototype.forEach.call(segs.children,function(g,j){g.classList.remove('run');g.classList.toggle('done',j<i);});
+    var g=segs.children[i];void g.offsetWidth;g.classList.add('run');
+  }
+  segs.addEventListener('animationend',function(){kxGo((kxCur+1)%S.length);});
+  function kxOpen(){
+    before=userPaused;userPaused=true;run();
+    kx.hidden=false;document.body.classList.add('kx-on');
+    kxPaused=false;kx.classList.remove('paused');
+    kxGo(cur);
+    if(kx.requestFullscreen){try{kx.requestFullscreen().then(function(){wasFS=true;}).catch(function(){});}catch(err){}}
+    document.getElementById('kxClose').focus();
+  }
+  function kxClose(){
+    if(kx.hidden)return;
+    kx.hidden=true;document.body.classList.remove('kx-on');
+    if(document.fullscreenElement&&document.exitFullscreen){document.exitFullscreen().catch(function(){});}
+    wasFS=false;userPaused=before;run();
+    document.getElementById('kFull').focus();
+  }
+  document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&wasFS){wasFS=false;kxClose();}});
+  document.getElementById('kFull').addEventListener('click',kxOpen);
+  document.getElementById('kxClose').addEventListener('click',kxClose);
+  document.addEventListener('keydown',function(e){
+    if(!kx.hidden){
+      if(e.key==='Escape')kxClose();
+      else if(e.key==='ArrowRight')kxGo((kxCur+1)%S.length);
+      else if(e.key==='ArrowLeft')kxGo((kxCur-1+S.length)%S.length);
+      else if(e.key===' '){e.preventDefault();kxPaused=!kxPaused;kx.classList.toggle('paused',kxPaused);}
+      return;
+    }
+    if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();
+  });
+
+  /* Notes de conception */
+  var fab=document.getElementById('fab'),drawer=document.getElementById('drawer');
+  function notes(on){
+    document.body.classList.toggle('notes-on',on);
+    drawer.classList.toggle('open',on);
+    drawer.setAttribute('aria-hidden',on?'false':'true');
+    fab.setAttribute('aria-pressed',on?'true':'false');
+    fab.querySelector('.fl').textContent=on?'Masquer les notes':'Notes de conception';
+    fab.querySelector('.fs').textContent=on?'Masquer':'Notes';
+  }
+  function closeDrawer(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');}
+  fab.addEventListener('click',function(){notes(!document.body.classList.contains('notes-on'));});
+  document.getElementById('drClose').addEventListener('click',closeDrawer);
+
+  if(/[?&]kiosque=1/.test(location.search))kxOpen();
+  if(location.hash==='#notes')notes(true);
+})();
+</script>
+</body>
+</html>
